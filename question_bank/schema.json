@@ -1,0 +1,207 @@
+{
+  "$defs": {
+    "content": {
+      "additionalProperties": false,
+      "properties": {
+        "takeaway": {"type": "string"},
+        "knowledge_card": {"type": "object"},
+        "distractor_explanations": {
+          "type": "object"
+        },
+        "explanation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "text": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "text"
+            ],
+            "type": "object"
+          },
+          "maxItems": 4,
+          "minItems": 0,
+          "type": "array"
+        },
+        "prompt": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "prompt",
+        "explanation"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://local.invalid/schemas/question-bank-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_answers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "answer": {
+      "type": "object"
+    },
+    "concept": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "content_i18n": {
+      "additionalProperties": false,
+      "properties": {
+        "en-US": {
+          "$ref": "#/$defs/content"
+        },
+        "zh-CN": {
+          "$ref": "#/$defs/content"
+        }
+      },
+      "required": [
+        "zh-CN",
+        "en-US"
+      ],
+      "type": "object"
+    },
+    "difficulty": {
+      "enum": [
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "domain": {
+      "enum": [
+        "sde",
+        "mle"
+      ]
+    },
+    "id": {
+      "pattern": "^(sde|mle)-[a-z0-9]+(-[a-z0-9]+)*-[0-9]{4}$",
+      "type": "string"
+    },
+    "numeric_answer": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "numeric_tolerance": {
+      "minimum": 0,
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "question_family_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {"type": "integer", "enum": [1, 2]},
+    "source_kind": {"enum": ["legacy_generated", "curated", "imported"]},
+    "selection_status": {"enum": ["active", "candidate", "retired"]},
+    "quality_tier": {"type": "string"},
+    "question_style": {"enum": ["concept", "scenario", "code_reasoning", "debugging", "system_design", "tradeoff", "calculation"]},
+    "cognitive_skill": {"type": "string"},
+    "knowledge_points": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "source_refs": {"type": "array", "items": {"type": "object"}},
+    "regex_answers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "topic": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "single_choice",
+        "fill_blank"
+      ]
+    },
+    "verification": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "reference_solver",
+            "stable_fact"
+          ]
+        },
+        "solver": {
+          "type": "string"
+        },
+        "solver_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method",
+        "solver",
+        "solver_version",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "verified": {
+      "const": true
+    },
+    "version": {
+      "enum": [1, 2]
+    }
+  },
+  "required": [
+    "id",
+    "domain",
+    "topic",
+    "concept",
+    "question_family_id",
+    "difficulty",
+    "type",
+    "content_i18n",
+    "answer",
+    "accepted_answers",
+    "regex_answers",
+    "numeric_answer",
+    "numeric_tolerance",
+    "parameters",
+    "verified",
+    "verification",
+    "version"
+  ],
+  "title": "Bilingual verified question",
+  "type": "object"
+}

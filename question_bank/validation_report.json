@@ -1,0 +1,155 @@
+{
+  "checks": {
+    "bilingual_content": "pass",
+    "choice_answers_and_distractors": "pass",
+    "exact_duplicates": "pass",
+    "fill_answers_and_regex": "pass",
+    "manifest_and_checksums": "pass",
+    "quota_and_inventory": "pass",
+    "schema_and_required_fields": "pass",
+    "unique_ids": "pass"
+  },
+  "error_count": 0,
+  "errors": [],
+  "review_status": {
+    "algorithmically_verified": 1000,
+    "human_reviewed": 0,
+    "note": "No claim of subject-matter-expert human review is made."
+  },
+  "statistics": {
+    "difficulty": {
+      "L1": 300,
+      "L2": 500,
+      "L3": 200
+    },
+    "domain": {
+      "mle": 500,
+      "sde": 500
+    },
+    "domain_type_difficulty": {
+      "mle": {
+        "fill_blank": {
+          "L1": 40,
+          "L2": 65,
+          "L3": 25
+        },
+        "single_choice": {
+          "L1": 110,
+          "L2": 185,
+          "L3": 75
+        }
+      },
+      "sde": {
+        "fill_blank": {
+          "L1": 40,
+          "L2": 65,
+          "L3": 25
+        },
+        "single_choice": {
+          "L1": 110,
+          "L2": 185,
+          "L3": 75
+        }
+      }
+    },
+    "families": {
+      "mle-attention-head-dimension-l1-choice": 18,
+      "mle-attention-head-dimension-l1-fill": 6,
+      "mle-batches-per-epoch-l1-choice": 18,
+      "mle-batches-per-epoch-l1-fill": 7,
+      "mle-bayes-posterior-l3-choice": 12,
+      "mle-bayes-posterior-l3-fill": 4,
+      "mle-convolution-output-l2-choice": 31,
+      "mle-convolution-output-l2-fill": 11,
+      "mle-dense-layer-parameters-l1-choice": 19,
+      "mle-dense-layer-parameters-l1-fill": 7,
+      "mle-effective-batch-size-l2-choice": 31,
+      "mle-effective-batch-size-l2-fill": 11,
+      "mle-embedding-parameters-l1-choice": 19,
+      "mle-embedding-parameters-l1-fill": 7,
+      "mle-f1-score-l2-choice": 31,
+      "mle-f1-score-l2-fill": 11,
+      "mle-kv-cache-memory-l3-choice": 13,
+      "mle-kv-cache-memory-l3-fill": 5,
+      "mle-lora-parameters-l3-choice": 13,
+      "mle-lora-parameters-l3-fill": 4,
+      "mle-moe-active-parameters-l3-choice": 12,
+      "mle-moe-active-parameters-l3-fill": 4,
+      "mle-precision-l2-choice": 31,
+      "mle-precision-l2-fill": 11,
+      "mle-recall-l2-choice": 31,
+      "mle-recall-l2-fill": 11,
+      "mle-tensor-elements-l1-choice": 18,
+      "mle-tensor-elements-l1-fill": 7,
+      "mle-top-k-candidates-l3-choice": 12,
+      "mle-top-k-candidates-l3-fill": 4,
+      "mle-train-split-l1-choice": 18,
+      "mle-train-split-l1-fill": 6,
+      "mle-training-compute-l3-choice": 13,
+      "mle-training-compute-l3-fill": 4,
+      "mle-training-steps-l2-choice": 30,
+      "mle-training-steps-l2-fill": 10,
+      "sde-array-storage-l1-choice": 18,
+      "sde-array-storage-l1-fill": 7,
+      "sde-average-memory-access-l2-choice": 31,
+      "sde-average-memory-access-l2-fill": 11,
+      "sde-binary-search-l1-choice": 19,
+      "sde-binary-search-l1-fill": 7,
+      "sde-cache-misses-l2-choice": 31,
+      "sde-cache-misses-l2-fill": 11,
+      "sde-directed-graph-edges-l3-choice": 13,
+      "sde-directed-graph-edges-l3-fill": 4,
+      "sde-exponential-backoff-l3-choice": 13,
+      "sde-exponential-backoff-l3-fill": 5,
+      "sde-grid-dynamic-programming-l3-choice": 13,
+      "sde-grid-dynamic-programming-l3-fill": 4,
+      "sde-hash-bucket-capacity-l2-choice": 31,
+      "sde-hash-bucket-capacity-l2-fill": 11,
+      "sde-littles-law-l3-choice": 12,
+      "sde-littles-law-l3-fill": 4,
+      "sde-page-offset-l1-choice": 18,
+      "sde-page-offset-l1-fill": 7,
+      "sde-perfect-binary-tree-l1-choice": 19,
+      "sde-perfect-binary-tree-l1-fill": 7,
+      "sde-query-selectivity-l2-choice": 30,
+      "sde-query-selectivity-l2-fill": 10,
+      "sde-read-write-quorum-l3-choice": 12,
+      "sde-read-write-quorum-l3-fill": 4,
+      "sde-replication-storage-l1-choice": 18,
+      "sde-replication-storage-l1-fill": 6,
+      "sde-request-count-l1-choice": 18,
+      "sde-request-count-l1-fill": 6,
+      "sde-round-robin-l2-choice": 31,
+      "sde-round-robin-l2-fill": 11,
+      "sde-tcp-window-throughput-l2-choice": 31,
+      "sde-tcp-window-throughput-l2-fill": 11,
+      "sde-two-tier-cache-l3-choice": 12,
+      "sde-two-tier-cache-l3-fill": 4
+    },
+    "family_count": 72,
+    "topic_count": 12,
+    "topics": {
+      "mle/classical_ml": 66,
+      "mle/deep_learning": 68,
+      "mle/math_statistics": 58,
+      "mle/ml_systems_inference": 93,
+      "mle/mlops_evaluation": 42,
+      "mle/pytorch_training": 90,
+      "mle/transformer_llm": 83,
+      "sde/backend_systems": 116,
+      "sde/data_structures_algorithms": 111,
+      "sde/databases": 122,
+      "sde/networks": 42,
+      "sde/operating_systems": 109
+    },
+    "total": 1000,
+    "type": {
+      "fill_blank": 260,
+      "single_choice": 740
+    },
+    "verification_method": {
+      "reference_solver": 1000
+    }
+  },
+  "status": "pass"
+}
