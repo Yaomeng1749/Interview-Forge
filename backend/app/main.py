@@ -1287,7 +1287,7 @@ def create_app() -> FastAPI:
             "jev": (
                 "connected"
                 if active == "typesafe-jev"
-                else "error"
+                else "configured"
                 if has_jev
                 else "not_configured"
             ),

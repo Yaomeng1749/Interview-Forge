@@ -96,21 +96,25 @@ export function RapidDrillPage() {
     setCorrect(0)
   }
 
+  const questionId = question?.id
+  const questionPosition = question?.position
+  const feedbackQuestionId = feedback?.question_id
+
   useEffect(() => {
-    if (!sessionId || !question || feedback) return
+    if (!sessionId || !questionId || feedback) return
     let cancelled = false
     api.nextDrill(sessionId, locale).then((localized) => {
       if (!cancelled) setQuestion(localized)
     }).catch(() => undefined)
     return () => { cancelled = true }
-  }, [feedback, locale, question?.id, sessionId])
+  }, [feedback, locale, questionId, sessionId])
 
   useEffect(() => {
-    if (!sessionId || !question || !feedback) return
+    if (!sessionId || !questionPosition || !feedbackQuestionId) return
     let cancelled = false
     Promise.all([
-      api.drillQuestion(sessionId, question.position, locale),
-      api.drillFeedback(sessionId, question.position, locale),
+      api.drillQuestion(sessionId, questionPosition, locale),
+      api.drillFeedback(sessionId, questionPosition, locale),
     ]).then(([localizedQuestion, localizedFeedback]) => {
       if (!cancelled) {
         setQuestion(localizedQuestion)
@@ -118,7 +122,7 @@ export function RapidDrillPage() {
       }
     }).catch(() => undefined)
     return () => { cancelled = true }
-  }, [feedback?.question_id, locale, question?.position, sessionId])
+  }, [feedbackQuestionId, locale, questionPosition, sessionId])
 
   const lastFiniteQuestion = count !== null && completed >= count
   const displayedOptions = question?.type === 'single_choice' ? presentationOptions(question, sessionId || '') : []

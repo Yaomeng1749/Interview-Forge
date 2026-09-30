@@ -61,7 +61,7 @@ Fill-in questions omit `options` and use one or more accepted answers, optional 
 
 ## HTTP boundary
 
-Backend base URL is `http://127.0.0.1:8000`; frontend reads `VITE_API_URL` and defaults to that URL.
+Backend base URL is `http://127.0.0.1:8000`; frontend reads `VITE_API_URL` and defaults to that URL. The root launcher uses `BACKEND_PORT` to set both the API port and the frontend's API URL.
 
 Core routes:
 

@@ -2,6 +2,7 @@
 set -euo pipefail
 
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+backend_port="${BACKEND_PORT:-8000}"
 skip_install=false
 if [[ "${1:-}" == "--skip-install" ]]; then
   skip_install=true
@@ -30,10 +31,10 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
-(cd "$project_root/backend" && uv run uvicorn app.main:app --host 127.0.0.1 --port 8000) &
+(cd "$project_root/backend" && uv run uvicorn app.main:app --host 127.0.0.1 --port "$backend_port") &
 backend_pid=$!
-(cd "$project_root/frontend" && npm run dev -- --host 127.0.0.1 --port 5173) &
+(cd "$project_root/frontend" && VITE_API_URL="http://127.0.0.1:$backend_port" npm run dev -- --host 127.0.0.1 --port 5173) &
 frontend_pid=$!
 
-echo "Interview Forge is starting: http://127.0.0.1:5173"
+echo "Interview Forge: http://127.0.0.1:5173 (API: http://127.0.0.1:$backend_port)"
 wait "$backend_pid" "$frontend_pid"

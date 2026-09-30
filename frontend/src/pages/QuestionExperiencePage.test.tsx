@@ -77,9 +77,9 @@ describe('question quality surfaces', () => {
     expect(screen.queryByText(/A.*The cache reuses/, { selector: 'li' })).not.toBeInTheDocument()
   })
 
-  it('explains that Jev only adjusts difficulty and knowledge coverage', async () => {
+  it('explains the Jev difficulty decision and local topic priorities', async () => {
     renderWithClient(<SettingsPage />)
-    expect(await screen.findByText(/Jev.*难度.*知识覆盖|Jev.*difficulty.*knowledge coverage/i)).toBeInTheDocument()
-    expect(screen.getByText(/不会.*A\s*\/\s*D\s*\/\s*G|cannot change.*A\s*\/\s*D\s*\/\s*G/i)).toBeInTheDocument()
+    expect(await screen.findByText(/Jev.*难度配比.*本地规则.*知识点优先级|Jev.*difficulty mix.*local rules.*topics/i)).toBeInTheDocument()
+    expect(screen.getByText(/A\s*\/\s*D\s*\/\s*G.*不变|A\s*\/\s*D\s*\/\s*G.*stays fixed/i)).toBeInTheDocument()
   })
 })

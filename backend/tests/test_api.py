@@ -490,6 +490,16 @@ def test_browser_contract_supports_bilingual_full_exam_flow(client: TestClient) 
     }
 
 
+def test_configured_jev_is_not_reported_as_failed_before_first_decision(
+    client: TestClient, monkeypatch,
+) -> None:
+    monkeypatch.setenv("TYPESAFE_API_KEY", "test-provider-key")
+    status = client.get("/api/settings/provider/status")
+    assert status.status_code == 200
+    assert status.json()["jev"] == "configured"
+    assert status.json()["active_provider"] == "rule-based"
+
+
 def test_browser_contract_supports_settings_drill_and_provider_status(
     client: TestClient,
 ) -> None:
