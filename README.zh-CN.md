@@ -8,6 +8,12 @@
 
 Interview Forge 把限时套卷、短轮刷题、逐题解析和复习队列放在一起。应用运行在你的电脑上，作答与进度保存在本机 SQLite。题目尽量训练你在具体约束下选择方案，而不只是背术语或套算式。
 
+## 演示视频
+
+[![观看 Interview Forge 演示：建卷、快速练习、复习与设置](docs/assets/interview-forge-demo-preview.gif)](docs/assets/interview-forge-demo.mp4)
+
+[观看完整 45 秒演示（MP4）](docs/assets/interview-forge-demo.mp4)。画面录自真实应用，使用全新的本机演示数据库；本次录制没有配置可选的 Jev Provider。
+
 ## 可以怎样练习
 
 | 模式 | 实际行为 |
