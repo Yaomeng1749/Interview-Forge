@@ -8,12 +8,6 @@
 
 Interview Forge combines timed exams, short practice sessions, explanations, and a review queue. It runs on your computer; attempts and progress live in a local SQLite database. The goal is to learn how to choose an approach under realistic constraints, not just recall a term or multiply numbers.
 
-## Demo
-
-[![Watch the Interview Forge demo: exams, rapid practice, review, and settings](docs/assets/interview-forge-demo-preview.gif)](docs/assets/interview-forge-demo.mp4)
-
-[Watch the full 45-second walkthrough (MP4)](docs/assets/interview-forge-demo.mp4). Recorded from the real app with a fresh local demo database; the optional Jev provider is not configured in this recording.
-
 ## What is in the app
 
 | Practice mode | What happens |
